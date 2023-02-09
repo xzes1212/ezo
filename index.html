@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <style>
@@ -11,56 +11,39 @@
       align-items: center;
       justify-content: center;
     }
-    
      button {
-        font-size: 236px;
-        padding: 20px 40px;
-        margin-top: 50px;
-        display: block;
-        margin-left: center;
-        margin-right: center;
-      }
-    
-    body {
-  background-color: black;
+    font-size: 236px;
+    padding: 20px 40px;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+body {background-color: black;
 }
 
   </style>
-  
 </head>
 <body>
-
 <div id="number-container">
   <p id="number"></p>
 </div>
-
 <button onclick="generateNumber()">Обновить</button>
-  <audio id="sound">
-  <source src="https://github.com/xzes1212/ezo/blob/main/sound.mp3" type="audio/mpeg">
+<audio id="sound">
+<source src="https://github.com/xzes1212/ezo/blob/main/sound.mp3" type="audio/mpeg">
 </audio>
 
  <script>
 function generateNumber() {
   var randomNumber = Math.floor(Math.random() * 10) + 1;
   document.getElementById("number").innerHTML = randomNumber;
+  var sound = document.getElementById("sound");
+  sound.play();
 }
 
 generateNumber();
 </script> 
-
-<script>
-  var button = document.getElementById("refresh-button");
-  var sound = document.getElementById("sound");
-
-  button.addEventListener("click", function() {
-    sound.play();
-    // Your code to refresh the number here
-  });
-</script>
-
-
-
 </body>
 </html>
-
 
