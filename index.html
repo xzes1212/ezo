@@ -34,19 +34,15 @@
   <p id="number"></p>
 </div>
 
-<button id="refresh-button">Обновить</button>
-<audio id="sound">
-  <source src="sound.mp3" type="audio/mpeg">
-</audio>
+<button onclick="generateNumber()">Обновить</button>
 
 <script>
-  var button = document.getElementById("refresh-button");
-  var sound = document.getElementById("sound");
+function generateNumber() {
+  var randomNumber = Math.floor(Math.random() * 10) + 1;
+  document.getElementById("number").innerHTML = randomNumber;
+}
 
-  button.addEventListener("click", function() {
-    sound.play();
-    // Your code to refresh the number here
-  });
+generateNumber();
 </script>
 
 
