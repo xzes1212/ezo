@@ -37,9 +37,9 @@
   <script>
     let previousNumber = null;
     function generateNumber() {
-      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      var randomNumber = Math.floor(Math.random() * 5) + 1;
       while (randomNumber === previousNumber) {
-        randomNumber = Math.floor(Math.random() * 10) + 1;
+        randomNumber = Math.floor(Math.random() * 5) + 1;
       }
       previousNumber = randomNumber;
       document.getElementById("number").innerHTML = randomNumber;
