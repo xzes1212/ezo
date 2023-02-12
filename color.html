@@ -3,7 +3,7 @@
 <head>
   <style>
     body {
-      height: 150vh;
+      height: 130vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -24,13 +24,26 @@
   <audio id="sound">
     <source src="https://xzes1212.github.io/ezo/sound.mp3" type="audio/mpeg">
   </audio>
-  <script>
-    function changeBackground() {
-      var colors = ["red", "green", "blue", "yellow", "orange", "purple", "white", "black"];
-      var random_color = colors[Math.floor(Math.random() * colors.length)];
+  <script type="text/javascript">
+  var colors = ["red", "green", "blue", "yellow", "orange", "purple", "white", "black"];
+  var usedColors = [];
+  var random_color = "";
+
+  function getRandomColor() {
+    var randomIndex = Math.floor(Math.random() * colors.length);
+    random_color = colors[randomIndex];
+
+    if (usedColors.includes(random_color)) {
+      // color has already been used, get a new one
+      return getRandomColor();
+    } else {
+      usedColors.push(random_color);
       document.body.style.backgroundColor = random_color;
+      return random_color;
     }
-  </script>
+  }
+
+  getRandomColor();
+</script>
 </body>
 </html>
-
