@@ -1,13 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <style>
     body {
-      background-color: <script type="text/javascript">
-      var colors = ["red", "green", "blue", "yellow", "pink", "orange", "purple", "grey", "brown", "black"];
-      var random_color = colors[Math.floor(Math.random() * colors.length)];
-      document.write(random_color);
-    </script>;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -24,11 +19,18 @@
     }
   </style>
 </head>
-<body>
+<body onload="changeBackground()">
   <button onclick="location.reload(); document.getElementById('sound').play()">Обновить</button>
   <audio id="sound">
     <source src="https://xzes1212.github.io/ezo/sound.mp3" type="audio/mpeg">
   </audio>
+  <script>
+    function changeBackground() {
+      var colors = ["red", "green", "blue", "yellow", "pink", "orange", "purple", "grey", "brown", "black"];
+      var random_color = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = random_color;
+    }
+  </script>
 </body>
 </html>
 
